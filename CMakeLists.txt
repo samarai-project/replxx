@@ -6,7 +6,7 @@ project(
 	VERSION 0.0.4
 	LANGUAGES CXX C
 )
-
+  
 if (NOT DEFINED CMAKE_CXX_STANDARD)
 	set(CMAKE_CXX_STANDARD 11)
 endif()
