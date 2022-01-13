@@ -164,39 +164,39 @@ install(
 		${CMAKE_INSTALL_INCLUDEDIR}
 )
 
-if (REPLXX_BUILD_EXAMPLES)
-	add_executable(replxx-example-cxx-api "")
-	add_executable(replxx-example-c-api "")
+# if (REPLXX_BUILD_EXAMPLES)
+# 	add_executable(replxx-example-cxx-api "")
+# 	add_executable(replxx-example-c-api "")
 
-	target_sources(
-		replxx-example-cxx-api
-		PRIVATE
-			examples/cxx-api.cxx
-			examples/util.c
-	)
-	target_sources(
-		replxx-example-c-api
-		PRIVATE
-			examples/c-api.c
-			examples/util.c
-	)
-	target_compile_definitions(replxx-example-cxx-api PRIVATE REPLXX_STATIC $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_WARNINGS=1>)
-	target_compile_definitions(replxx-example-c-api PRIVATE REPLXX_STATIC $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_WARNINGS=1>)
-	target_link_libraries(replxx-example-cxx-api PRIVATE replxx::replxx)
-	target_link_libraries(
-		replxx-example-c-api
-		PRIVATE
-		replxx::replxx
-		$<${compiler-id-clang-or-gnu}:stdc++>
-		$<${is-clang}:m>
-		$<${coverage-config}:--coverage>
-	)
-	target_link_libraries(
-		replxx-example-cxx-api
-		PRIVATE
-		$<${coverage-config}:--coverage>
-	)
-endif()
+# 	target_sources(
+# 		replxx-example-cxx-api
+# 		PRIVATE
+# 			examples/cxx-api.cxx
+# 			examples/util.c
+# 	)
+# 	target_sources(
+# 		replxx-example-c-api
+# 		PRIVATE
+# 			examples/c-api.c
+# 			examples/util.c
+# 	)
+# 	target_compile_definitions(replxx-example-cxx-api PRIVATE REPLXX_STATIC $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_WARNINGS=1>)
+# 	target_compile_definitions(replxx-example-c-api PRIVATE REPLXX_STATIC $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_WARNINGS=1>)
+# 	target_link_libraries(replxx-example-cxx-api PRIVATE replxx::replxx)
+# 	target_link_libraries(
+# 		replxx-example-c-api
+# 		PRIVATE
+# 		replxx::replxx
+# 		$<${compiler-id-clang-or-gnu}:stdc++>
+# 		$<${is-clang}:m>
+# 		$<${coverage-config}:--coverage>
+# 	)
+# 	target_link_libraries(
+# 		replxx-example-cxx-api
+# 		PRIVATE
+# 		$<${coverage-config}:--coverage>
+# 	)
+# endif()
 
 if (NOT REPLXX_BUILD_PACKAGE)
 	return()
