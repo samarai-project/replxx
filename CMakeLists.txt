@@ -47,6 +47,17 @@ set(REPLXX_URL_INFO_ABOUT "https://github.com/AmokHuginnsson/replxx")
 set(REPLXX_DISPLAY_NAME "replxx")
 set(REPLXX_CONTACT "amok@codestation.org")
 
+###################################################################################################
+# MacOS target (JKU 2022-05-15)
+###################################################################################################
+
+if (APPLE) 
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "10.14" CACHE STRING "Minimum OS X deployment version" FORCE)
+endif ()
+
+###################################################################################################
+###################################################################################################
+
 set(is-clang $<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>)
 set(is-msvc $<CXX_COMPILER_ID:MSVC>)
 set(is-gnu $<CXX_COMPILER_ID:GNU>)
