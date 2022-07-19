@@ -15,3 +15,5 @@ history.txt
 /build
 /build_vs2017_x64
 /build_vs2017_win32
+/build_arm64
+/build_x86_64
